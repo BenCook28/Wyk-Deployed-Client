@@ -33,7 +33,7 @@
 	app.config(config);
 
 	var API_BASE = location.hostname === "localhost" ?
-		"//localhost:3000/api/" : "//wyk-client.herokuapp.com/api/";
+		"//localhost:3000/api/" : "//wyk-server-ben-cook.herokuapp.com/api/";
 	app.constant('API_BASE', API_BASE);
 })();
 
