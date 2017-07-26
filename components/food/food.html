@@ -1,0 +1,25 @@
+<div class="move-right">
+<strong>
+<h1>Food</h1>
+<md-progress-linear md-mode="determinate" value="{{vm.determinateValue}}"></md-progress-linear>
+<p>According to a University of Pennsylvania study, people in larger cities actually pay slightly less in grocceries (less than 5% difference), but enjoy wider varieties of food.  Food costs vary so much depending on your choice of restaurants and groccery items, so we use inputs in this section.</p>
+
+<div>
+	<label for="howMuchPerWeekGrocceries">Around how much do you typically spend per week on grocceries?</label> <input type="number" placeholder="Cost per Week" name="grocceriesPerWeek" ng-model="ctrl.user.grocerries" ng-required="true"/>
+</div><br/>
+
+<div>
+	<label for="howOftenRestaurants">Around how many times per week will you eat at restaurants?</label> <input type="number" placeholder="Times per Week" name="restaurantsPerWeek" ng-model="ctrl.user.restaurantTimes" ng-required="true"/>
+</div><br/>
+
+<div>
+	<label for="howMuchPerWeekRestaurants">Around how much will each restaurant meal cost?</label> <input type="number" placeholder="Cost per Meal" name="restaurantsPerMeal" ng-model="ctrl.user.restaurantsPerMeal" ng-required="true"/>
+</div><br/>
+
+<p>You may pay at least {{}} in food per year.  You'll now keep {{}}.</p>
+</strong>
+<section>
+    <button class="btn" ng-click="ctrl.previous()">previous</button>
+    <button class="btn btn-primary" ng-click="ctrl.next()">next</button>
+</section>
+<div class="move-right">

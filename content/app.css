@@ -1,0 +1,108 @@
+h1, h2, h3, h4, h5 {
+	color: #65016C;
+}
+body{
+	background-color: #f7ffe0;
+	color:#65016C;
+}
+#def-save, #signup, #login, #log-save {
+	background-color: #f7ffe0;
+	border: 1px solid black;
+	color: #65016C;
+}
+
+.container {
+	width: 75% !important;
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+}
+
+.row {
+	margin-left: 0 !important;
+	margin-right: 0 !important;
+}
+
+.col-xs-12 {
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+}
+
+input.ng-invalid.ng-touched, textarea.ng-invalid.ng-touched{
+  border: 2px solid red;
+}
+
+input[disabled="disabled"]{
+  opacity: 0.4;
+  cursor: not-allowed !important;
+}
+
+.mySlides {
+	size: cover !important;
+	right: 0px;
+}
+
+.w3-left, .w3-right, .w3-badge {
+	cursor:pointer;
+}
+
+.w3-badge {
+	height:13px;
+	width:13px;
+	padding:0
+}
+
+.w3-content{
+	align-items: left;
+	
+}
+h1{;
+	font: sans-serif;
+	color: #65016C;
+	text-align: center
+}
+h3{
+	color: #65016C;
+	text-align: center;
+
+}
+#inlineTable{
+  border: none;
+
+}
+
+.w3-container{
+	position: relative
+	right: 5%;
+}
+.w3-content .w3-display-container{
+	right: 5%;
+}
+nav li {
+	float: left;
+}
+#paragraphContainer{
+	padding-left: 5em;
+}
+p{
+	color: #65016C;
+	padding-left: : 100em;
+/*	text-indent: 3em;*/
+}
+#logoContainer{
+	padding-left: 90%;
+}
+body{
+	color: #65016C;
+	margin-left: 4rem;
+}
+.container-fluid{
+	margin-left: 10%;
+}
+
+#navColor{
+	color: #65016C;
+}
+
+.move-right{
+	margin-left: 5%;
+}

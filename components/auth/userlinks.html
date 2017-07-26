@@ -1,0 +1,38 @@
+<!-- <div class="navbar-header">
+	<a class="navbar-brand" ui-sref="logs">Wyk</a>
+</div> -->
+<!-- <ul ng-show="ctrl.signedIn()" class="nav navbar-nav">
+<li class="navbar-header"><a class="navbar-brand" ui-sref="logs">Wyk</a></li>
+	<li><a ui-sref="grossPayAndTaxes">Gross Pay and Taxes</a></li>
+	<li><a ui-sref="voluntaryDeductions">Voluntary Deductions</a></li>
+	<li><a ui-sref="housing">Housing</a></li>
+	<li><a ui-sref="food">Food</a></li>
+	<li><a ui-sref="utilities">Utilities</a></li>
+	<li><a ui-sref="transport">Transportation</a></li>
+	<li><a ui-sref="misc">Miscellaneous</a></li>
+</ul> -->
+<div id="navColor">
+<ul class="nav navbar-nav">
+	<li class="navbar-header"><a class="navbar-brand" ui-sref="logs">Wyk</a></li>
+	<li><a ui-sref="splash">Home</a></li>
+	<li><a ui-sref="ourStory">Our Story</a></li>
+	<li><a ui-sref="careers">Careers</a></li>
+	<li><a ui-sref="signin" ng-show="ctrl.signedOut()" >Sign In</a></li>
+	<li><a ui-sref="signup" ng-show="ctrl.signedOut()">Sign Up</a></li>
+</ul>
+<div class="container">
+	<ul class="nav navbar-nav navbar-right">
+		<li>
+			<a href="#" ng-show="ctrl.signedIn()" ng-click="ctrl.signout()">Sign out {{ ctrl.user().email }}</a>
+		</li>
+	</ul>
+</div>
+</div>
+<!-- <ul ng-show="!ctrl.signedIn()" class="nav navbar-nav">
+	<li class="navbar-header"><a class="navbar-brand" ui-sref="logs">Wyk</a></li>
+	<li><a ui-sref="splash">Home</a></li>
+	<li><a ui-sref="ourStory">Our Story</a></li>
+	<li><a ui-sref="careers">Careers</a></li>
+	<li><a ui-sref="signin">Sign In</a></li>
+	<li><a ui-sref="signup">Sign Up</a></li>
+</ul> -->

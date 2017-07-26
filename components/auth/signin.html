@@ -1,0 +1,29 @@
+<div class="container">
+	<div class="row">
+		<div class="col-xs-6 col-xs-offset-4">
+			<h3>Sign In</h3>
+			<p>Welcome back!  We respect your curiosity and openness to new places and new opportunities to increase your prosperity.  Let's find you some money!</p>
+			<form id="new_user" name="signinForm" ng-submit="ctrl.signin()">
+				<p>
+					<label for="email">Email</label><br>
+					<input type="email" placeholder="Email" name="email" ng-model="ctrl.email" ng-required="true"/>
+					<div ng-show="signinForm.email.$touched && signinForm.email.$invalid">
+					<small style="color: red; display: block; text-align: center;">Please enter a valid email</small>
+					</div>
+				</p>
+				<p>
+					<label for="password">Password</label><br>
+					<input type="password" name="password" ng-model="ctrl.password" required>
+					<div ng-show="signinForm.password.$touched && signinForm.password.$invalid">
+				<small style="color: red; display: block; text-align: center;">Enter a valid password</small>
+				</div>
+				</p>
+				<button type="submit" id="signin" name="commit" value="Signin" class="btn btn-default">Signin</button>
+				<span class="signin">
+					Don't have an account?
+					<a ui-sref="signup">SIGN UP</a>
+				</span>
+			</form>
+		</div>
+	</div>
+</div>

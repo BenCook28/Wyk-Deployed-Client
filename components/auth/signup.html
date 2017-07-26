@@ -1,0 +1,30 @@
+<div class="container">
+	<div class="row">
+		<div class="col-xs-6 col-xs-offset-4">
+			<h3>Sign Up</h3>
+			<p>{{ctrl.message}}</p>
+			<p>You're making a good decision.  Imagine how much better you'll be able to provide for yourself and your loved ones when you choose an opportunity which offers a higher net income.  Imagine what you'll do with the extra money.  Sign up to make it happen.</p>
+			<form id="new_user" name="signupForm" ng-submit="ctrl.submit()">
+				<p>
+					<label for="email">Email</label><br>
+					<input type="email" placeholder="Email" name="email" ng-model="ctrl.email" ng-required="true">
+					<div ng-show="signupForm.email.$touched && contactForm.email.$invalid">
+					<small style="color: red; display: block; text-align: center;">Enter a valid email</small>
+					</div>
+				</p>
+				<p>
+					<label for="password">Password</label><br>
+					<input type="password" ng-model="ctrl.password" name="password" required>
+				</p>
+				<div ng-show="contactForm.name.$touched && contactForm.name.$invalid">
+				<small style="color: red; display: block; text-align: center;">Enter a valid password</small>
+				</div>
+				<button type="submit" id="signup" class="btn btn-default">Signup</button>
+				<span class="login">
+					Already have an account?
+					<a ui-sref="signin">Log in.</a>
+				</span>
+			</form>
+		</div>
+	</div>
+</div>

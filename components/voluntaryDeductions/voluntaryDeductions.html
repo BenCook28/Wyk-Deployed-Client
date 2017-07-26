@@ -1,0 +1,151 @@
+<div class="move-right">
+<strong>
+<h1>Voluntary Deductions</h1>
+<md-progress-linear md-mode="determinate" value="{{vm.determinateValue}}"></md-progress-linear>
+<p>Want to pay less in taxes?  You can.</p>
+<form name="voluntaryDeductions">
+	<div ng-controller="voluntaryDeductionsController">
+		<label for="retireContribute">Will you contribute to a retirement plan?</label><br>
+		<input type="radio" ng-model="retireContribute.contribute" value="Yes">
+		    Yes
+		</label><br/>
+		<label>
+		<input type="radio" ng-model="retireContribute.contribute" value="No">
+		    No
+		</label><br/>
+	</div>
+	<br/>
+
+	<div>
+		<label for="regularOrRoth">Will your contributions be traditional or Roth?</label><br>
+		<input type="radio" ng-model="regularOrRoth.type" value="traditional">
+		    Traditional
+		</label><br/>
+		<label>
+		<input type="radio" ng-model="regularOrRoth.type" value="Roth">
+		    Roth
+		</label><br/>
+	</div>
+	<br/>
+
+<div>
+		<label for="dollarOrPercentage">Will you contribute a dollar amount or percentage of pay?</label><br>
+		<input type="radio" ng-model="dollarOrPercentage.type" value="dollar">
+		    Dollar Amount
+		</label><br/>
+		<label>
+		<input type="radio" ng-model="dollarOrPercentage.type" value="percentage">
+		    Percentage
+		</label><br/>
+	</div>
+	<br/>
+
+<div>
+	<label for="howMuchDollar">What dollar amount will you contribute each month?</label> <input type="number" placeholder="Dollar Amount per Month" name="howMuchDollar" ng-model="ctrl.user.dollarAmount" ng-required="true"/><br>
+	<br/>
+</div>
+
+<div>
+	<label for="whatPercentage">What percentage will you contribute?</label> <input type="number" placeholder="Percentage of Pay" name="whatPercentage" ng-model="ctrl.user.percentage" ng-required="true"/><br>
+	<br/>
+</div>
+
+<div>
+		<label for="healthInsuranceYesNo">Will you get health insurance?</label><br>
+		<input type="radio" ng-model="healthInsuranceYesNo.type" value="Yes">
+		    Yes
+		</label><br/>
+		<label>
+		<input type="radio" ng-model="healthInsuranceYesNo.type" value="No">
+		    No
+		</label><br/>
+	</div>
+<br/>
+
+<div>
+	<label for="healthInsuranceKind">Where will you get your health insurance?</label><br>
+	<input type="radio" ng-model="healthInsuranceKind.type" value="Private">
+	    Private
+	</label><br/>
+	<label>
+	<input type="radio" ng-model="healthInsuranceKind.type" value="Affordable Care Act">
+	    Affordable Care Act
+	</label><br/>
+	<input type="radio" ng-model="healthInsuranceKind.type" value="Medicare">
+	    Medicare
+	</label><br/>
+	<input type="radio" ng-model="healthInsuranceKind.type" value="Medicaid">
+	    Medicaid
+	</label><br/>
+</div>
+	<br/>
+
+<div>
+	<label for="dentalYesNo">Will you get dental insurance?</label><br>
+	<input type="radio" ng-model="dentalInsuranceYesNo.type" value="Yes">
+	    Yes
+	</label><br/>
+	<label>
+	<input type="radio" ng-model="dentalInsuranceYesNo.type" value="No">
+	    No
+	</label><br/>
+</div>
+<br/>
+
+<div>
+	<label for="visionYesNo">Will you get vision insurance?</label><br>
+	<input type="radio" ng-model="visionInsuranceYesNo.type" value="Yes">
+	    Yes
+	</label><br/>
+	<label>
+	<input type="radio" ng-model="visionInsuranceYesNo.type" value="No">
+	    No
+	</label><br/>
+</div>
+<br/>
+
+<div>
+	<label for="lifeYesNo">Will you get life insurance?</label><br>
+	<input type="radio" ng-model="lifeInsuranceYesNo.type" value="Yes">
+	    Yes
+	</label><br/>
+	<label>
+	<input type="radio" ng-model="lifeInsuranceYesNo.type" value="No">
+	    No
+	</label><br/>
+</div>
+
+<div>
+	<label for="LifeHowMuchDollar">What will you pay in life insurance per month?</label> <input type="number" placeholder="Dollar Amount per Month" name="lifeHowMuchDollar" ng-model="ctrl.user.lifeDollarAmount" ng-required="true"/><br>
+	<br/>
+</div>
+
+<div>
+	<label for="otherVol">Will you reduce your taxible income in other ways?</label><br>
+	<input type="radio" ng-model="otherVolYesNo.type" value="Yes">
+	    Yes
+	</label><br/>
+	<label>
+	<input type="radio" ng-model="otherVolYesNo.type" value="No">
+	    No
+	</label><br/>
+</div>
+
+<div>
+	<label for="howElse">How else will you reduce your taxible income?</label> <input type="text" placeholder="Your method" name="howElse" ng-model="ctrl.user.howElse" ng-required="true"/><br>
+	<br/>
+</div>
+
+</form>
+<br>
+You'll save {{}} in taxes and contribute {{}} to your retirement.  Now you'll keep {{}}.<br></br>
+</strong>
+<section>
+    <button class="btn btn" ng-click="ctrl.previous()">previous</button>
+    <button class="btn btn-primary" ng-click="ctrl.next()">next</button>
+</section>
+<br/>
+<div id=logoContainer>
+	<img src="../../img/Wyk_logo_2.png" style="width: 5em; height: 15em;">
+</div>
+</div>

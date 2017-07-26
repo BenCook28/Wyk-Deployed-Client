@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app="wyk">
+	<head>
+		<link rel="icon" type="image/png" sizes="16x16" href="./img/Wyk_logo_2.PNG">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Wyk</title>
+		<link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/content/app.css">
+		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
+			<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	</head>
+	<body>
+
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<userlinks></userlinks>
+			</div>
+		</nav>
+
+		<div ui-view></div>
+
+		
+		<script type="text/javascript" src="bower_components/angular-loader/angular-loader.min.js"></script>
+		<script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+		<script type="text/javascript" src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+		<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+		<script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+		<!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script> -->
+		<!-- <script src="bower_components/angular-socket-io/socket.js"></script>
+		<script src="//localhost:3000/socket.io/socket.io.js"></script> -->
+		<!-- <script type="text/javascript" src="app.js"></script> -->
+		<script type="text/javascript" src="content/bundle.js"></script>
+		<div id=logoContainer>
+	<img src="../../img/Wyk_logo_2.png" style="width: 5em; height: 15em;">
+	</div>
+
+	</body>
+</html>

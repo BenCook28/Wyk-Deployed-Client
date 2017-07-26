@@ -1,0 +1,84 @@
+<div class="move-right">
+<strong>
+<h1>Miscellaneous</h1>
+<md-progress-linear md-mode="determinate" value="{{vm.determinateValue}}"></md-progress-linear>
+<div class="move-right">
+<p>We're all unique and we're unlikely to think of every possible expense.  What other non-trivial expenses do you expecet to pay regularly?</p>
+
+<strong><div>
+	<label for="debtYesNo">Will you make debt payments for things besides home mortgages?</label><br>
+	<input type="radio" ng-model="debtYesNo.type" value="Yes">
+	    Yes
+	</label><br/>
+	<label>
+	<input type="radio" ng-model="rideSharingYesNo.type" value="No">
+	    No
+	</label>
+</div><br/>
+
+<div>
+	<label for="debtHowMuch">How much do you expect to spend on non-mortgage debt per month?</label> <input type="number" placeholder="Monthly Cost" name="debtHowMuch" ng-model="ctrl.user.debtHowMuch" ng-required="true"/>
+</div><br/>
+
+<div>
+	<label for="gymYesNo">Will you join a gym?</label><br>
+	<input type="radio" ng-model="gymYesNo.type" value="Yes">
+	    Yes
+	</label><br/>
+	<label>
+	<input type="radio" ng-model="gymYesNo.type" value="No">
+	    No
+	</label>
+</div><br/>
+
+<div>
+	<label for="netflixYesNo">Will you subscribe to Netflix?</label><br>
+	<input type="radio" ng-model="netflixYesNo.type" value="Yes">
+	    Yes
+	</label><br/>
+	<label>
+	<input type="radio" ng-model="netflixYesNo.type" value="No">
+	    No
+	</label>
+</div><br/>
+
+<div>
+	<label for="cableYesNo">Will you pay for cable?</label><br>
+	<input type="radio" ng-model="cableYesNo.type" value="Yes">
+	    Yes
+	</label><br/>
+	<label>
+	<input type="radio" ng-model="cableYesNo.type" value="No">
+	    No
+	</label>
+</div><br/>
+
+<div>
+	<label for="otherYesNo">Will you pay for other non-trivial expenses regularly?</label><br>
+	<input type="radio" ng-model="otherYesNo.type" value="Yes">
+	    Yes
+	</label><br/>
+	<label>
+	<input type="radio" ng-model="otherYesNo.type" value="No">
+	    No
+	</label>
+</div><br/>
+</strong>
+
+<div>
+<input type="button" id="more_fields" onclick="add_fields();" value="Add More" /><br><br>
+<input type="text" placeholder="Expense Label"/><div id="more_fileds"><br>
+    <div class="content" id="wrapper" ng-model="ctrl.user.howFarAway" ng-required="true" name="more_fileds">
+     	<!-- <span>Expense Label: <input type="text" style="width:48px;" name="width[]" value="" /></span> -->
+        <span>Dollar Amount: <input type="number" style="width:48px;" name="width[]" value="" /></span><br>
+    </div>
+</div>
+</div>
+</strong>
+<br>
+<section>
+    <button class="btn" ng-click="ctrl.previous()">previous</button>
+    <button class="btn btn-primary" ng-click="ctrl.finish()">finish</button>
+</section>
+</div>
+</div>

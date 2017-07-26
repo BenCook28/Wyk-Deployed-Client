@@ -1,0 +1,42 @@
+<div class="move-right">
+<h1>Gross Pay and Taxes</h1><br/>
+<md-progress-linear md-mode="determinate" value="{{vm.determinateValue}}"></md-progress-linear>
+<form name="grossPayAndTaxes">
+	<div ng-controller="grossPayAndTaxesController">
+		<label for="grossPay">What'll be your yearly gross pay?</label> <input type="number" placeholder="Yearly Gross Pay" name="grossPay" ng-model="ctrl.user.grossPay" ng-required="true"/><br>
+		<br/>
+	</div>
+
+	<div>
+		<label for="maritalStatus">What'll be your marital status?</label></br>
+		<label>
+		<input type="radio" ng-model="maritalStatus.name" value="single">
+		    Single
+		</label><br/>
+		<label>
+		<input type="radio" ng-model="maritalStatus.name" value="married">
+		    Married
+		</label><br/>
+	</div>
+	<br/>
+
+	<div>
+		<label for="cityStateZip">Where will you live?</label></br>
+		<label for="Address">Address:</label><input vs-google-autocomplete ng-model="address" name="address" type="text">
+	</div>
+</form>
+<strong><div class="content">You'll owe {{}} in federal taxes, 
+								{{}} in social security taxes 
+								{{}} in medicare taxes, 
+								{{}} in state taxes, and
+								{{}} in local taxes.
+
+					This lowers your wyk to {{}}. 
+</div></strong><br>
+
+<section>
+    <button class=btn btn" ng-click="ctrl.previous()">previous</button>
+    <button class="btn btn-primary" ng-click="ctrl.next()">next</button>
+</section>
+<br>
+</div>

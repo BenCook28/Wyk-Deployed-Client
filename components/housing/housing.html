@@ -1,0 +1,47 @@
+<div class="move-right">
+<strong>
+<h1>Housing</h1>
+<md-progress-linear md-mode="determinate" value="{{vm.determinateValue}}"></md-progress-linear>
+<p>In the words of Robert Kiosaki, a house is a liability, not an asset.  Assets put money
+into your pocket.  Liabilities take money out of your pocket.  Let's see how much housing
+takes from your pocket.</p>
+
+<div>
+	<label for="housingYesNo">Will you pay for housing?</label><br>
+	<input type="radio" ng-model="housingYesNo.type" value="Yes">
+	    Yes
+	</label><br/>
+	<label>
+	<input type="radio" ng-model="otherVolYesNo.type" value="No">
+	    No
+	</label>
+</div><br/>
+
+<div>
+	<label for="rentBuy">Will you rent or buy?</label><br>
+	<input type="radio" ng-model="housingRentBuy.type" value="Rent">
+	    Rent
+	</label><br/>
+	<label>
+	<input type="radio" ng-model="housingRentBuy.type" value="Buy">
+	    Buy
+	</label>
+</div><br/>
+
+<div>
+		<label for="cityStateZip">So we can find possible housing options, where will you work?</label></br>
+		<label for="Address">Address:</label><input vs-google-autocomplete ng-model="workAddress" name="workAddress" type="text" placeholder="Work Address">
+	</div><br>
+
+<div>
+	<label for="howMuchDollar">How many miles from work are you willing to commute?</label> <input type="number" placeholder="Miles from Work" name="howFarAway" ng-model="ctrl.user.howFarAway" ng-required="true"/>
+</div><br/>
+
+<p>You may pay at least {{}} in housing per year.  You'll now keep {{}}.</p>
+</strong>
+<section>
+    <button class="btn" ng-click="ctrl.previous()">previous</button>
+    <button class="btn btn-primary" ng-click="ctrl.next()">next</button>
+</section><br>
+
+</div>
