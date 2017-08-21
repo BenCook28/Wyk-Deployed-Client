@@ -3,6 +3,11 @@
 <md-progress-linear md-mode="determinate" value="{{vm.determinateValue}}"></md-progress-linear>
 <form name="grossPayAndTaxes">
 	<div ng-controller="grossPayAndTaxesController">
+		<label for="grossPay">What will you call this opportunity?  For example: Indianapolis Salesforce</label> <input type="text" placeholder="Opportunity Name" name="opportunity" ng-model="ctrl.user.opportunity" ng-required="true"/><br>
+		<br/>
+	</div>
+
+	<div ng-controller="grossPayAndTaxesController">
 		<label for="grossPay">What'll be your yearly gross pay?</label> <input type="number" placeholder="Yearly Gross Pay" name="grossPay" ng-model="ctrl.user.grossPay" ng-required="true"/><br>
 		<br/>
 	</div>
