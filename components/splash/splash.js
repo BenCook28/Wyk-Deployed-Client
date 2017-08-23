@@ -1,7 +1,26 @@
 (function(){
 	angular
-		.module('wyk.splash.splash',['ui.router'])
-		.config(splashConfig);
+		.module('wyk.splash.splash',['ui.router', 'ui.bootstrap'])
+		.config(splashConfig)
+		.controller('CarouselDemoCtrl', CarouselDemoCtrl);
+
+		function CarouselDemoCtrl($scope){
+		  $scope.myInterval = 7000;
+		  $scope.slides = [
+		    {
+		      image: '../../img/New York City.jpeg'
+		    },
+		    {
+		      image: '../../img/Chicago.jpeg'
+		    },
+		    {
+		      image: '../../img/Singapore.jpeg'
+		    },
+		    {
+		      image: '../../img/Burb.jpeg'
+		    }
+		  ];
+		}
 
 		function splashConfig($stateProvider) {
 			$stateProvider

@@ -53,17 +53,18 @@
 					controller: grossPayAndTaxesController,
 					controllerAs: 'ctrl',
 					bindToController: this
-				});
+				})
 		}
 
 		grossPayAndTaxesConfig.$inject = ['$stateProvider'];
 
-		function grossPayAndTaxesController($state) {
+		function grossPayAndTaxesController($state, $http) {
 			var vm = this;
 			vm.previous = function(){
 				$state.go('welcome');
 			}
 			vm.next = function(){
+				$http.put('/api/add-opportunity', )
 				$state.go('voluntaryDeductions');
 			}
 		};
