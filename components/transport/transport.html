@@ -1,70 +1,79 @@
 <div class="move-right">
-<strong>
-<h1>Transportation</h1>
-<md-progress-linear md-mode="determinate" value="{{vm.determinateValue}}"></md-progress-linear>
+	<strong>
+		<h1>Transportation</h1>
+		<md-progress-linear md-mode="determinate" value="{{vm.determinateValue}}"></md-progress-linear>
 
-<div>
-	<label for="driveYesNo">Will you drive to work?</label><br>
-	<input type="radio" ng-model="driveYesNo.type" value="Yes">
-	    Yes
-	</label><br/>
-	<label>
-	<input type="radio" ng-model="driveYesNo.type" value="No">
-	    No
-	</label>
-</div><br/>
+		<div>
+			<label for="driveYesNo">Will you drive to work?</label><br>
+			<input type="radio" ng-model="driveYesNo.type" value="Yes">
+			Yes
+			</label><br />
+			<label>
+				<input type="radio" ng-model="driveYesNo.type" value="No">
+				No
+			</label>
+		</div><br />
 
-<div>
-	<label for="carYear">What's your vehicle's year?</label> <input type="number" placeholder="Year" name="vehicleYear" ng-model="ctrl.user.year" ng-required="true"/>
-</div><br/>
+		<div>
+			<label for="carYear">What's your vehicle's year?</label> <input type="number" placeholder="Year" name="vehicleYear"
+			 ng-model="ctrl.user.year" ng-required="true" />
+		</div><br />
 
-<div>
-	<label for="carMake">What's your vehicle's make?</label> <input type="text" placeholder="Make" name="vehicleMake" ng-model="ctrl.user.make" ng-required="true"/>
-</div><br/>
+		<div>
+			<label for="carMake">What's your vehicle's make?</label> <input type="text" placeholder="Make" name="vehicleMake"
+			 ng-model="ctrl.user.make" ng-required="true" />
+		</div><br />
 
-<div>
-	<label for="carModel">What's your vehicle's model?</label> <input type="text" placeholder="Model" name="vehicleModel" ng-model="ctrl.user.model" ng-required="true"/>
-</div><br/>
+		<div>
+			<label for="carModel">What's your vehicle's model?</label> <input type="text" placeholder="Model" name="vehicleModel"
+			 ng-model="ctrl.user.model" ng-required="true" />
+		</div><br />
 
-<div>
-	<label for="publicTransportYesNo">Will you use public transportation to get to work?</label><br>
-	<input type="radio" ng-model="publicTransportYesNo.type" value="Yes">
-	    Yes
-	</label><br/>
-	<label>
-	<input type="radio" ng-model="publicTransportYesNo.type" value="No">
-	    No
-	</label>
-</div><br/>
+		<div>
+			<label for="publicTransportYesNo">Will you use public transportation to get to work?</label><br>
+			<input type="radio" ng-model="publicTransportYesNo.type" value="Yes">
+			Yes
+			</label><br />
+			<label>
+				<input type="radio" ng-model="publicTransportYesNo.type" value="No">
+				No
+			</label>
+		</div><br />
 
-<div>
-	<label for="publicTransportHowMuch">How much do you expect to spend on public transportation per week for reasons besides work?</label> <input type="number" placeholder="Weekly Cost" name="publicTransportHowMuch" ng-model="ctrl.user.publicTransportHowMuch" ng-required="true"/>
-</div><br/>
+		<div>
+			<label for="publicTransportHowMuch">How much do you expect to spend on public transportation per week for reasons
+				besides work?</label> <input type="number" placeholder="Weekly Cost" name="publicTransportHowMuch" ng-model="ctrl.user.publicTransportHowMuch"
+			 ng-required="true" />
+		</div><br />
 
-<div>
-	<label for="rideSharingYesNo">Will you use ride sharing?</label><br>
-	<input type="radio" ng-model="rideSharingYesNo.type" value="Yes">
-	    Yes
-	</label><br/>
-	<label>
-	<input type="radio" ng-model="rideSharingYesNo.type" value="No">
-	    No
-	</label>
-</div><br/>
+		<div>
+			<label for="rideSharingYesNo">Will you use ride sharing?</label><br>
+			<input type="radio" ng-model="rideSharingYesNo.type" value="Yes">
+			Yes
+			</label><br />
+			<label>
+				<input type="radio" ng-model="rideSharingYesNo.type" value="No">
+				No
+			</label>
+		</div><br />
 
-<div>
-	<label for="rideSharingHowMuch">How much do you expect to spend on ride sharing per week?  Uber, Lyft, etc. charge similar prices.</label> <input type="number" placeholder="Weekly Cost" name="rideSharingHowMuch" ng-model="ctrl.user.rideSharingHowMuch" ng-required="true"/>
-</div><br/>
+		<div>
+			<label for="rideSharingHowMuch">How much do you expect to spend on ride sharing per week? Uber, Lyft, etc. charge
+				similar prices.</label> <input type="number" placeholder="Weekly Cost" name="rideSharingHowMuch" ng-model="ctrl.user.rideSharingHowMuch"
+			 ng-required="true" />
+		</div><br />
 
-<div>
-	<label for="otherHowMuch">How much do you expect to spend on other transporation like taxis, ferries, and the wings of giant eagles?</label> <input type="number" placeholder="Weekly Cost" name="otherHowMuch" ng-model="ctrl.user.otherHowMuch" ng-required="true"/>
-</div><br>
+		<div>
+			<label for="otherHowMuch">How much do you expect to spend on other transporation like taxis, ferries, and the wings
+				of giant eagles?</label> <input type="number" placeholder="Weekly Cost" name="otherHowMuch" ng-model="ctrl.user.otherHowMuch"
+			 ng-required="true" />
+		</div><br>
 
-<p>You may pay at least {{}} in housing per year.  You'll now keep {{}}.</p>
-</strong>
+		<p>You may pay at least {{}} in transportation per year. You'll now keep {{}}.</p>
+	</strong>
 
-<section>
-    <button class="btn" ng-click="ctrl.previous()">previous</button>
-    <button class="btn btn-primary" ng-click="ctrl.next()">next</button>
-</section><br>
+	<section>
+		<button class="btn" ng-click="ctrl.previous()">previous</button>
+		<button class="btn btn-primary" ng-click="ctrl.next()">next</button>
+	</section><br>
 </div>
