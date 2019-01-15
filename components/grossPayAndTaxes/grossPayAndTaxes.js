@@ -39,36 +39,39 @@
 //     };
 // });
 // googleAPI key: AIzaSyCcxhACS4JpWGKsJxJO3E85YGNdTwJwHm4
-(function(){
+(function () {
 	angular
-		.module('wyk.grossPayAndTaxes.grossPayAndTaxes',['ui.router'])
+		.module('wyk.grossPayAndTaxes.grossPayAndTaxes', ['ui.router'])
 		.config(grossPayAndTaxesConfig)
 		.controller('grossPayAndTaxesController', grossPayAndTaxesController)
 
-		function grossPayAndTaxesConfig($stateProvider) {
-			$stateProvider
-				.state('grossPayAndTaxes', {
-					url: '/gross-pay-and-taxes',
-					templateUrl: './components/grossPayAndTaxes/grossPayAndTaxes.html',
-					controller: grossPayAndTaxesController,
-					controllerAs: 'ctrl',
-					bindToController: this
-				})
+	function grossPayAndTaxesConfig($stateProvider) {
+		$stateProvider
+			.state('grossPayAndTaxes', {
+				url: '/gross-pay-and-taxes',
+				templateUrl: './components/grossPayAndTaxes/grossPayAndTaxes.html',
+				controller: grossPayAndTaxesController,
+				controllerAs: 'ctrl',
+				bindToController: this
+			})
+	}
+
+	grossPayAndTaxesConfig.$inject = ['$stateProvider'];
+
+	function grossPayAndTaxesController($state, $http) {
+		console.log('$http is', $http);
+		var vm = this;
+		vm.previous = function () {
+			$state.go('welcome');
 		}
+		vm.next = function () {
+			debugger;
+			console.log('$http2 is', $http);
+			$http.put('/api/add-opportunity')
+			$state.go('voluntaryDeductions');
+		}
+	};
 
-		grossPayAndTaxesConfig.$inject = ['$stateProvider'];
-
-		function grossPayAndTaxesController($state, $http) {
-			var vm = this;
-			vm.previous = function(){
-				$state.go('welcome');
-			}
-			vm.next = function(){
-				$http.put('/api/add-opportunity', )
-				$state.go('voluntaryDeductions');
-			}
-		};
-
-		grossPayAndTaxesController.$inject = ['$state'];
+	grossPayAndTaxesController.$inject = ['$state', '$http'];
 })();
 
