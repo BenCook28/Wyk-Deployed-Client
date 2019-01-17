@@ -36,37 +36,6 @@
 		"//localhost:3000/api/" : "//wyk-server-ben-cook.herokuapp.com/api/";
 	app.constant('API_BASE', API_BASE);
 })();
-(function(){
-	angular
-		.module('wyk.food.food',['ui.router'])
-		.config(foodConfig)
-		.controller('foodController', foodController)
-
-		function foodConfig($stateProvider) {
-			$stateProvider
-				.state('food', {
-					url: '/food',
-					templateUrl: './components/food/food.html',
-					controller: foodController,
-					controllerAs: 'ctrl',
-					bindToController: this
-				});
-		}
-
-		foodConfig.$inject = ['$stateProvider'];
-
-		function foodController($state) {
-			var vm = this;
-			vm.previous = function(){
-				$state.go('housing');
-			}
-			vm.next = function(){
-				$state.go('utilities');
-			}
-		};
-
-		foodController.$inject = ['$state'];
-})();
 
 (function(){
 	angular
@@ -195,6 +164,37 @@
 		};
 
 		welcomeController.$inject = ['$state'];
+})();
+(function(){
+	angular
+		.module('wyk.food.food',['ui.router'])
+		.config(foodConfig)
+		.controller('foodController', foodController)
+
+		function foodConfig($stateProvider) {
+			$stateProvider
+				.state('food', {
+					url: '/food',
+					templateUrl: './components/food/food.html',
+					controller: foodController,
+					controllerAs: 'ctrl',
+					bindToController: this
+				});
+		}
+
+		foodConfig.$inject = ['$stateProvider'];
+
+		function foodController($state) {
+			var vm = this;
+			vm.previous = function(){
+				$state.go('housing');
+			}
+			vm.next = function(){
+				$state.go('utilities');
+			}
+		};
+
+		foodController.$inject = ['$state'];
 })();
 // angular.module('marriedRadio', [])
 //     .controller('maritalStatusController', ['$scope', function($scope) {
@@ -329,29 +329,82 @@
 
 		housingController.$inject = ['$state'];
 })();
+function add_fields() {
+    document.getElementById('wrapper').innerHTML += '<span>Dollar Amount: <input type="number"></span>\r\n';
+}
 (function(){
 	angular
-		.module('wyk.ourStory.ourStory',['ui.router'])
-		.config(ourStoryConfig);
+		.module('wyk.misc.misc',['ui.router'])
+		.config(miscConfig)
+		.controller('miscController', miscController)
 
-		function ourStoryConfig($stateProvider) {
+		function miscConfig($stateProvider) {
 			$stateProvider
-				.state('ourStory', {
-					url: '/ourstory',
-					templateUrl: '/components/ourStory/ourStory.html',
-					controller: ourStoryController,
+				.state('misc', {
+					url: '/misc',
+					templateUrl: './components/misc/misc.html',
+					controller: miscController,
 					controllerAs: 'ctrl',
 					bindToController: this
 				});
 		}
 
-		ourStoryConfig.$inject = ['$stateProvider'];
+		miscConfig.$inject = ['$stateProvider'];
 
-		function ourStoryController($state) {
+		function miscController($state) {
+			var vm = this;
+			vm.previous = function(){
+				$state.go('transport');
+			}
+			vm.finish = function(){
+				$state.go('results');
+			}
+		};
+
+		miscController.$inject = ['$state'];
+})();
+(function(){
+	angular
+		.module('wyk.splash.splash',['ui.router', 'ui.bootstrap'])
+		.config(splashConfig)
+		.controller('CarouselDemoCtrl', CarouselDemoCtrl);
+
+		function CarouselDemoCtrl($scope){
+		  $scope.myInterval = 7000;
+		  $scope.slides = [
+		    {
+		      image: '../../img/New York City.jpeg'
+		    },
+		    {
+		      image: '../../img/Chicago.jpeg'
+		    },
+		    {
+		      image: '../../img/Singapore.jpeg'
+		    },
+		    {
+		      image: '../../img/Burb.jpeg'
+		    }
+		  ];
+		}
+
+		function splashConfig($stateProvider) {
+			$stateProvider
+				.state('splash', {
+					url: '/splash',
+					templateUrl: '/components/splash/splash.html',
+					controller: SplashController,
+					controllerAs: 'ctrl',
+					bindToController: this
+				});
+		}
+
+		splashConfig.$inject = ['$stateProvider'];
+
+		function SplashController($state) {
 			var vm = this;
 		};
 
-		ourStoryController.$inject = ['$state'];
+		SplashController.$inject = ['$state'];
 })();
 // (function(){
 // 	angular.module('wyk.history', [
@@ -426,111 +479,27 @@
 })();
 (function(){
 	angular
-		.module('wyk.splash.splash',['ui.router', 'ui.bootstrap'])
-		.config(splashConfig)
-		.controller('CarouselDemoCtrl', CarouselDemoCtrl);
+		.module('wyk.ourStory.ourStory',['ui.router'])
+		.config(ourStoryConfig);
 
-		function CarouselDemoCtrl($scope){
-		  $scope.myInterval = 7000;
-		  $scope.slides = [
-		    {
-		      image: '../../img/New York City.jpeg'
-		    },
-		    {
-		      image: '../../img/Chicago.jpeg'
-		    },
-		    {
-		      image: '../../img/Singapore.jpeg'
-		    },
-		    {
-		      image: '../../img/Burb.jpeg'
-		    }
-		  ];
-		}
-
-		function splashConfig($stateProvider) {
+		function ourStoryConfig($stateProvider) {
 			$stateProvider
-				.state('splash', {
-					url: '/splash',
-					templateUrl: '/components/splash/splash.html',
-					controller: SplashController,
+				.state('ourStory', {
+					url: '/ourstory',
+					templateUrl: '/components/ourStory/ourStory.html',
+					controller: ourStoryController,
 					controllerAs: 'ctrl',
 					bindToController: this
 				});
 		}
 
-		splashConfig.$inject = ['$stateProvider'];
+		ourStoryConfig.$inject = ['$stateProvider'];
 
-		function SplashController($state) {
+		function ourStoryController($state) {
 			var vm = this;
 		};
 
-		SplashController.$inject = ['$state'];
-})();
-function add_fields() {
-    document.getElementById('wrapper').innerHTML += '<span>Dollar Amount: <input type="number"></span>\r\n';
-}
-(function(){
-	angular
-		.module('wyk.misc.misc',['ui.router'])
-		.config(miscConfig)
-		.controller('miscController', miscController)
-
-		function miscConfig($stateProvider) {
-			$stateProvider
-				.state('misc', {
-					url: '/misc',
-					templateUrl: './components/misc/misc.html',
-					controller: miscController,
-					controllerAs: 'ctrl',
-					bindToController: this
-				});
-		}
-
-		miscConfig.$inject = ['$stateProvider'];
-
-		function miscController($state) {
-			var vm = this;
-			vm.previous = function(){
-				$state.go('transport');
-			}
-			vm.finish = function(){
-				$state.go('results');
-			}
-		};
-
-		miscController.$inject = ['$state'];
-})();
-(function(){
-	angular
-		.module('wyk.utilities.utilities',['ui.router'])
-		.config(utilitiesConfig)
-		.controller('utilitiesController', utilitiesController)
-
-		function utilitiesConfig($stateProvider) {
-			$stateProvider
-				.state('utilities', {
-					url: '/utilities',
-					templateUrl: './components/utilities/utilities.html',
-					controller: utilitiesController,
-					controllerAs: 'ctrl',
-					bindToController: this
-				});
-		}
-
-		utilitiesConfig.$inject = ['$stateProvider'];
-
-		function utilitiesController($state) {
-			var vm = this;
-			vm.previous = function(){
-				$state.go('food');
-			}
-			vm.next = function(){
-				$state.go('transport');
-			}
-		};
-
-		utilitiesController.$inject = ['$state'];
+		ourStoryController.$inject = ['$state'];
 })();
 (function(){
 	angular
@@ -562,6 +531,37 @@ function add_fields() {
 		};
 
 		transportController.$inject = ['$state'];
+})();
+(function(){
+	angular
+		.module('wyk.utilities.utilities',['ui.router'])
+		.config(utilitiesConfig)
+		.controller('utilitiesController', utilitiesController)
+
+		function utilitiesConfig($stateProvider) {
+			$stateProvider
+				.state('utilities', {
+					url: '/utilities',
+					templateUrl: './components/utilities/utilities.html',
+					controller: utilitiesController,
+					controllerAs: 'ctrl',
+					bindToController: this
+				});
+		}
+
+		utilitiesConfig.$inject = ['$stateProvider'];
+
+		function utilitiesController($state) {
+			var vm = this;
+			vm.previous = function(){
+				$state.go('food');
+			}
+			vm.next = function(){
+				$state.go('transport');
+			}
+		};
+
+		utilitiesController.$inject = ['$state'];
 })();
 (function(){
 	angular
