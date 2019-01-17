@@ -36,6 +36,37 @@
 		"//localhost:3000/api/" : "//wyk-server-ben-cook.herokuapp.com/api/";
 	app.constant('API_BASE', API_BASE);
 })();
+(function(){
+	angular
+		.module('wyk.food.food',['ui.router'])
+		.config(foodConfig)
+		.controller('foodController', foodController)
+
+		function foodConfig($stateProvider) {
+			$stateProvider
+				.state('food', {
+					url: '/food',
+					templateUrl: './components/food/food.html',
+					controller: foodController,
+					controllerAs: 'ctrl',
+					bindToController: this
+				});
+		}
+
+		foodConfig.$inject = ['$stateProvider'];
+
+		function foodController($state) {
+			var vm = this;
+			vm.previous = function(){
+				$state.go('housing');
+			}
+			vm.next = function(){
+				$state.go('utilities');
+			}
+		};
+
+		foodController.$inject = ['$state'];
+})();
 
 (function(){
 	angular
@@ -165,61 +196,6 @@
 
 		welcomeController.$inject = ['$state'];
 })();
-(function(){
-	angular
-		.module('wyk.food.food',['ui.router'])
-		.config(foodConfig)
-		.controller('foodController', foodController)
-
-		function foodConfig($stateProvider) {
-			$stateProvider
-				.state('food', {
-					url: '/food',
-					templateUrl: './components/food/food.html',
-					controller: foodController,
-					controllerAs: 'ctrl',
-					bindToController: this
-				});
-		}
-
-		foodConfig.$inject = ['$stateProvider'];
-
-		function foodController($state) {
-			var vm = this;
-			vm.previous = function(){
-				$state.go('housing');
-			}
-			vm.next = function(){
-				$state.go('utilities');
-			}
-		};
-
-		foodController.$inject = ['$state'];
-})();
-(function(){
-	angular
-		.module('wyk.careers.careers',['ui.router'])
-		.config(careersConfig);
-
-		function careersConfig($stateProvider) {
-			$stateProvider
-				.state('careers', {
-					url: '/careers',
-					templateUrl: '/components/careers/careers.html',
-					controller: careersController,
-					controllerAs: 'ctrl',
-					bindToController: this
-				});
-		}
-
-		careersConfig.$inject = ['$stateProvider'];
-
-		function careersController($state) {
-			var vm = this;
-		};
-
-		careersController.$inject = ['$state'];
-})();
 // angular.module('marriedRadio', [])
 //     .controller('maritalStatusController', ['$scope', function($scope) {
 //       $scope.maritalStatus = {
@@ -300,6 +276,30 @@
 
 (function(){
 	angular
+		.module('wyk.careers.careers',['ui.router'])
+		.config(careersConfig);
+
+		function careersConfig($stateProvider) {
+			$stateProvider
+				.state('careers', {
+					url: '/careers',
+					templateUrl: '/components/careers/careers.html',
+					controller: careersController,
+					controllerAs: 'ctrl',
+					bindToController: this
+				});
+		}
+
+		careersConfig.$inject = ['$stateProvider'];
+
+		function careersController($state) {
+			var vm = this;
+		};
+
+		careersController.$inject = ['$state'];
+})();
+(function(){
+	angular
 		.module('wyk.housing.housing',['ui.router'])
 		.config(housingConfig)
 		.controller('housingController', housingController)
@@ -328,40 +328,6 @@
 		};
 
 		housingController.$inject = ['$state'];
-})();
-function add_fields() {
-    document.getElementById('wrapper').innerHTML += '<span>Dollar Amount: <input type="number"></span>\r\n';
-}
-(function(){
-	angular
-		.module('wyk.misc.misc',['ui.router'])
-		.config(miscConfig)
-		.controller('miscController', miscController)
-
-		function miscConfig($stateProvider) {
-			$stateProvider
-				.state('misc', {
-					url: '/misc',
-					templateUrl: './components/misc/misc.html',
-					controller: miscController,
-					controllerAs: 'ctrl',
-					bindToController: this
-				});
-		}
-
-		miscConfig.$inject = ['$stateProvider'];
-
-		function miscController($state) {
-			var vm = this;
-			vm.previous = function(){
-				$state.go('transport');
-			}
-			vm.finish = function(){
-				$state.go('results');
-			}
-		};
-
-		miscController.$inject = ['$state'];
 })();
 (function(){
 	angular
@@ -500,6 +466,40 @@ function add_fields() {
 		};
 
 		SplashController.$inject = ['$state'];
+})();
+function add_fields() {
+    document.getElementById('wrapper').innerHTML += '<span>Dollar Amount: <input type="number"></span>\r\n';
+}
+(function(){
+	angular
+		.module('wyk.misc.misc',['ui.router'])
+		.config(miscConfig)
+		.controller('miscController', miscController)
+
+		function miscConfig($stateProvider) {
+			$stateProvider
+				.state('misc', {
+					url: '/misc',
+					templateUrl: './components/misc/misc.html',
+					controller: miscController,
+					controllerAs: 'ctrl',
+					bindToController: this
+				});
+		}
+
+		miscConfig.$inject = ['$stateProvider'];
+
+		function miscController($state) {
+			var vm = this;
+			vm.previous = function(){
+				$state.go('transport');
+			}
+			vm.finish = function(){
+				$state.go('results');
+			}
+		};
+
+		miscController.$inject = ['$state'];
 })();
 (function(){
 	angular
