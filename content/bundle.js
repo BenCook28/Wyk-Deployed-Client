@@ -167,30 +167,6 @@
 })();
 (function(){
 	angular
-		.module('wyk.careers.careers',['ui.router'])
-		.config(careersConfig);
-
-		function careersConfig($stateProvider) {
-			$stateProvider
-				.state('careers', {
-					url: '/careers',
-					templateUrl: '/components/careers/careers.html',
-					controller: careersController,
-					controllerAs: 'ctrl',
-					bindToController: this
-				});
-		}
-
-		careersConfig.$inject = ['$stateProvider'];
-
-		function careersController($state) {
-			var vm = this;
-		};
-
-		careersController.$inject = ['$state'];
-})();
-(function(){
-	angular
 		.module('wyk.food.food',['ui.router'])
 		.config(foodConfig)
 		.controller('foodController', foodController)
@@ -219,6 +195,30 @@
 		};
 
 		foodController.$inject = ['$state'];
+})();
+(function(){
+	angular
+		.module('wyk.careers.careers',['ui.router'])
+		.config(careersConfig);
+
+		function careersConfig($stateProvider) {
+			$stateProvider
+				.state('careers', {
+					url: '/careers',
+					templateUrl: '/components/careers/careers.html',
+					controller: careersController,
+					controllerAs: 'ctrl',
+					bindToController: this
+				});
+		}
+
+		careersConfig.$inject = ['$stateProvider'];
+
+		function careersController($state) {
+			var vm = this;
+		};
+
+		careersController.$inject = ['$state'];
 })();
 // angular.module('marriedRadio', [])
 //     .controller('maritalStatusController', ['$scope', function($scope) {
@@ -503,37 +503,6 @@ function add_fields() {
 })();
 (function(){
 	angular
-		.module('wyk.transport.transport',['ui.router'])
-		.config(transportConfig)
-		.controller('transportController', transportController)
-
-		function transportConfig($stateProvider) {
-			$stateProvider
-				.state('transport', {
-					url: '/transport',
-					templateUrl: './components/transport/transport.html',
-					controller: transportController,
-					controllerAs: 'ctrl',
-					bindToController: this
-				});
-		}
-
-		transportConfig.$inject = ['$stateProvider'];
-
-		function transportController($state) {
-			var vm = this;
-			vm.previous = function(){
-				$state.go('utilities');
-			}
-			vm.next = function(){
-				$state.go('misc');
-			}
-		};
-
-		transportController.$inject = ['$state'];
-})();
-(function(){
-	angular
 		.module('wyk.utilities.utilities',['ui.router'])
 		.config(utilitiesConfig)
 		.controller('utilitiesController', utilitiesController)
@@ -562,6 +531,37 @@ function add_fields() {
 		};
 
 		utilitiesController.$inject = ['$state'];
+})();
+(function(){
+	angular
+		.module('wyk.transport.transport',['ui.router'])
+		.config(transportConfig)
+		.controller('transportController', transportController)
+
+		function transportConfig($stateProvider) {
+			$stateProvider
+				.state('transport', {
+					url: '/transport',
+					templateUrl: './components/transport/transport.html',
+					controller: transportController,
+					controllerAs: 'ctrl',
+					bindToController: this
+				});
+		}
+
+		transportConfig.$inject = ['$stateProvider'];
+
+		function transportController($state) {
+			var vm = this;
+			vm.previous = function(){
+				$state.go('utilities');
+			}
+			vm.next = function(){
+				$state.go('misc');
+			}
+		};
+
+		transportController.$inject = ['$state'];
 })();
 (function(){
 	angular
