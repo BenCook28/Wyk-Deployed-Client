@@ -167,6 +167,30 @@
 })();
 (function(){
 	angular
+		.module('wyk.careers.careers',['ui.router'])
+		.config(careersConfig);
+
+		function careersConfig($stateProvider) {
+			$stateProvider
+				.state('careers', {
+					url: '/careers',
+					templateUrl: '/components/careers/careers.html',
+					controller: careersController,
+					controllerAs: 'ctrl',
+					bindToController: this
+				});
+		}
+
+		careersConfig.$inject = ['$stateProvider'];
+
+		function careersController($state) {
+			var vm = this;
+		};
+
+		careersController.$inject = ['$state'];
+})();
+(function(){
+	angular
 		.module('wyk.food.food',['ui.router'])
 		.config(foodConfig)
 		.controller('foodController', foodController)
@@ -195,6 +219,37 @@
 		};
 
 		foodController.$inject = ['$state'];
+})();
+(function(){
+	angular
+		.module('wyk.housing.housing',['ui.router'])
+		.config(housingConfig)
+		.controller('housingController', housingController)
+
+		function housingConfig($stateProvider) {
+			$stateProvider
+				.state('housing', {
+					url: '/housing',
+					templateUrl: './components/housing/housing.html',
+					controller: housingController,
+					controllerAs: 'ctrl',
+					bindToController: this
+				});
+		}
+
+		housingConfig.$inject = ['$stateProvider'];
+
+		function housingController($state) {
+			var vm = this;
+			vm.previous = function(){
+				$state.go('voluntaryDeductions');
+			}
+			vm.next = function(){
+				$state.go('food');
+			}
+		};
+
+		housingController.$inject = ['$state'];
 })();
 // angular.module('marriedRadio', [])
 //     .controller('maritalStatusController', ['$scope', function($scope) {
@@ -276,58 +331,27 @@
 
 (function(){
 	angular
-		.module('wyk.careers.careers',['ui.router'])
-		.config(careersConfig);
+		.module('wyk.ourStory.ourStory',['ui.router'])
+		.config(ourStoryConfig);
 
-		function careersConfig($stateProvider) {
+		function ourStoryConfig($stateProvider) {
 			$stateProvider
-				.state('careers', {
-					url: '/careers',
-					templateUrl: '/components/careers/careers.html',
-					controller: careersController,
+				.state('ourStory', {
+					url: '/ourstory',
+					templateUrl: '/components/ourStory/ourStory.html',
+					controller: ourStoryController,
 					controllerAs: 'ctrl',
 					bindToController: this
 				});
 		}
 
-		careersConfig.$inject = ['$stateProvider'];
+		ourStoryConfig.$inject = ['$stateProvider'];
 
-		function careersController($state) {
+		function ourStoryController($state) {
 			var vm = this;
 		};
 
-		careersController.$inject = ['$state'];
-})();
-(function(){
-	angular
-		.module('wyk.housing.housing',['ui.router'])
-		.config(housingConfig)
-		.controller('housingController', housingController)
-
-		function housingConfig($stateProvider) {
-			$stateProvider
-				.state('housing', {
-					url: '/housing',
-					templateUrl: './components/housing/housing.html',
-					controller: housingController,
-					controllerAs: 'ctrl',
-					bindToController: this
-				});
-		}
-
-		housingConfig.$inject = ['$stateProvider'];
-
-		function housingController($state) {
-			var vm = this;
-			vm.previous = function(){
-				$state.go('voluntaryDeductions');
-			}
-			vm.next = function(){
-				$state.go('food');
-			}
-		};
-
-		housingController.$inject = ['$state'];
+		ourStoryController.$inject = ['$state'];
 })();
 function add_fields() {
     document.getElementById('wrapper').innerHTML += '<span>Dollar Amount: <input type="number"></span>\r\n';
@@ -362,49 +386,6 @@ function add_fields() {
 		};
 
 		miscController.$inject = ['$state'];
-})();
-(function(){
-	angular
-		.module('wyk.splash.splash',['ui.router', 'ui.bootstrap'])
-		.config(splashConfig)
-		.controller('CarouselDemoCtrl', CarouselDemoCtrl);
-
-		function CarouselDemoCtrl($scope){
-		  $scope.myInterval = 7000;
-		  $scope.slides = [
-		    {
-		      image: '../../img/New York City.jpeg'
-		    },
-		    {
-		      image: '../../img/Chicago.jpeg'
-		    },
-		    {
-		      image: '../../img/Singapore.jpeg'
-		    },
-		    {
-		      image: '../../img/Burb.jpeg'
-		    }
-		  ];
-		}
-
-		function splashConfig($stateProvider) {
-			$stateProvider
-				.state('splash', {
-					url: '/splash',
-					templateUrl: '/components/splash/splash.html',
-					controller: SplashController,
-					controllerAs: 'ctrl',
-					bindToController: this
-				});
-		}
-
-		splashConfig.$inject = ['$stateProvider'];
-
-		function SplashController($state) {
-			var vm = this;
-		};
-
-		SplashController.$inject = ['$state'];
 })();
 // (function(){
 // 	angular.module('wyk.history', [
@@ -479,30 +460,6 @@ function add_fields() {
 })();
 (function(){
 	angular
-		.module('wyk.ourStory.ourStory',['ui.router'])
-		.config(ourStoryConfig);
-
-		function ourStoryConfig($stateProvider) {
-			$stateProvider
-				.state('ourStory', {
-					url: '/ourstory',
-					templateUrl: '/components/ourStory/ourStory.html',
-					controller: ourStoryController,
-					controllerAs: 'ctrl',
-					bindToController: this
-				});
-		}
-
-		ourStoryConfig.$inject = ['$stateProvider'];
-
-		function ourStoryController($state) {
-			var vm = this;
-		};
-
-		ourStoryController.$inject = ['$state'];
-})();
-(function(){
-	angular
 		.module('wyk.transport.transport',['ui.router'])
 		.config(transportConfig)
 		.controller('transportController', transportController)
@@ -534,34 +491,46 @@ function add_fields() {
 })();
 (function(){
 	angular
-		.module('wyk.utilities.utilities',['ui.router'])
-		.config(utilitiesConfig)
-		.controller('utilitiesController', utilitiesController)
+		.module('wyk.splash.splash',['ui.router', 'ui.bootstrap'])
+		.config(splashConfig)
+		.controller('CarouselDemoCtrl', CarouselDemoCtrl);
 
-		function utilitiesConfig($stateProvider) {
+		function CarouselDemoCtrl($scope){
+		  $scope.myInterval = 7000;
+		  $scope.slides = [
+		    {
+		      image: '../../img/New York City.jpeg'
+		    },
+		    {
+		      image: '../../img/Chicago.jpeg'
+		    },
+		    {
+		      image: '../../img/Singapore.jpeg'
+		    },
+		    {
+		      image: '../../img/Burb.jpeg'
+		    }
+		  ];
+		}
+
+		function splashConfig($stateProvider) {
 			$stateProvider
-				.state('utilities', {
-					url: '/utilities',
-					templateUrl: './components/utilities/utilities.html',
-					controller: utilitiesController,
+				.state('splash', {
+					url: '/splash',
+					templateUrl: '/components/splash/splash.html',
+					controller: SplashController,
 					controllerAs: 'ctrl',
 					bindToController: this
 				});
 		}
 
-		utilitiesConfig.$inject = ['$stateProvider'];
+		splashConfig.$inject = ['$stateProvider'];
 
-		function utilitiesController($state) {
+		function SplashController($state) {
 			var vm = this;
-			vm.previous = function(){
-				$state.go('food');
-			}
-			vm.next = function(){
-				$state.go('transport');
-			}
 		};
 
-		utilitiesController.$inject = ['$state'];
+		SplashController.$inject = ['$state'];
 })();
 (function(){
 	angular
@@ -593,6 +562,37 @@ function add_fields() {
 		};
 
 		voluntaryDeductionsController.$inject = ['$state'];
+})();
+(function(){
+	angular
+		.module('wyk.utilities.utilities',['ui.router'])
+		.config(utilitiesConfig)
+		.controller('utilitiesController', utilitiesController)
+
+		function utilitiesConfig($stateProvider) {
+			$stateProvider
+				.state('utilities', {
+					url: '/utilities',
+					templateUrl: './components/utilities/utilities.html',
+					controller: utilitiesController,
+					controllerAs: 'ctrl',
+					bindToController: this
+				});
+		}
+
+		utilitiesConfig.$inject = ['$stateProvider'];
+
+		function utilitiesController($state) {
+			var vm = this;
+			vm.previous = function(){
+				$state.go('food');
+			}
+			vm.next = function(){
+				$state.go('transport');
+			}
+		};
+
+		utilitiesController.$inject = ['$state'];
 })();
 (function(){
 	angular.module('wyk')

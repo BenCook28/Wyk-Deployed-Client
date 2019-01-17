@@ -16,10 +16,9 @@
     "gulp-connect": "^5.0.0",
     "gulp-plumber": "^1.1.0",
     "gulp-sourcemaps": "^1.6.0",
-    "http-server": "^0.11.1"
+    "http-server": "^0.9.0"
   },
   "dependencies": {
-    "bower": "^1.8.0",
-    "lodash": "^4.17.11"
+    "bower": "^1.8.0"
   }
 }
